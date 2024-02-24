@@ -52,26 +52,25 @@ import {
 } from "react-icons/si";
 
 const projects = [
-  {
-    title: "EchoSphere",
-    description: "Virtual Desktop Assistant (voice recognition and automation)",
-    imgUrl: <EchoSphere />,
-    withIcons: [
-      <FaPython />,
-      <LuSoup />,
-    ],
-    link: "https://github.com/haaaarsh4/EchoSphere-"
-  },
-  {
-    title: "Active Track",
-    description: "Fitness Tracker : Machine Learning",
-    imgUrl: <ActiveTrack />,
-    withIcons: [
-      <FaPython />,
-    ],
-    link: "https://github.com/haaaarsh4/ActiveTrack"
-  },
-
+    {
+      title: "EchoSphere",
+      description: "Virtual Desktop Assistant (voice recognition and automation)",
+      imgUrl: <EchoSphere />,
+      withIcons: [
+        <FaPython />,
+        <LuSoup />,
+      ],
+      link: "https://github.com/haaaarsh4/EchoSphere-"
+    },
+    {
+      title: "Active Track",
+      description: "Fitness Tracker : Machine Learning",
+      imgUrl: <ActiveTrack />,
+      withIcons: [
+        <FaPython />,
+      ],
+      link: "https://github.com/haaaarsh4/ActiveTrack"
+    },
     {
       title: "Business Startup",
       description: "Design of a prototype for startup webpage",
