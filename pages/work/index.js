@@ -7,6 +7,7 @@ const Contact = () => {
     <Circles />
     <div className="container mx-auto h-full flex flex-col justify-center mt-5">
       <h2 className="h2 mb-8 xl:mb-0 text-accent">Projects</h2>
+      <p className="text-white">(Swipe to view more)</p>
       <div>
         <Slider />
       </div>

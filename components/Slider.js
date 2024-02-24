@@ -271,12 +271,6 @@ const chunk = (arr, size) =>
             </SwiperSlide>
         ))}
         {/* Navigation Buttons */}
-        <div >
-        <BsArrowRight />
-      </div>
-      <div>
-        <BsArrowLeft />
-      </div>
     </Swiper>
 
 );
