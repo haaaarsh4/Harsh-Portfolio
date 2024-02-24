@@ -109,7 +109,7 @@ const About = () => {
       <div className="flex-1 flex flex-col justify-center">
         <h2 className="h2 text-accent">Hey there!</h2>
         <p className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0">
-          I'm a dedicated computer science student at <strong className=" font-bold">McMaster University</strong> with a passion for with a passion for Full Stack Development and Software Engineering. Exploring the intersections of technology and innovation fuels my curiosity and drive. <br /> I am currently actively seeking internships for Summer 2024, here have a look at my <a href="Harsh_Upadhyay_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-50 underline hover:text-blue-100">Resume</a>.
+          I&apos;m a dedicated computer science student at <strong className=" font-bold">McMaster University</strong> with a passion for with a passion for Full Stack Development and Software Engineering. Exploring the intersections of technology and innovation fuels my curiosity and drive. <br /> I am currently actively seeking internships for Summer 2024, here have a look at my <a href="Harsh_Upadhyay_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-50 underline hover:text-blue-100">Resume</a>.
         </p>
       </div>
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px] xl:pt-24">          

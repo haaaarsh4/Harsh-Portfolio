@@ -205,75 +205,74 @@ const chunk = (arr, size) =>
     const [projectsChunks, setProjectsChunks] = useState([]);
 
     useEffect(() => {
-      const updateProjectsChunks = () => {
-        const windowWidth = window.innerWidth;
-        let chunkSize = 3; // Default chunk size
-        if (windowWidth < 768) {
-          chunkSize = 1; // Change this value for smaller screens
-        } else if (windowWidth < 1024) {
-          chunkSize = 2; // Change this value for medium screens
-        }
-        const updatedChunks = chunk(projects, chunkSize);
-        setProjectsChunks(updatedChunks);
-      };
+        const updateProjectsChunks = () => {
+            const windowWidth = window.innerWidth;
+            let chunkSize = 3; // Default chunk size
+            if (windowWidth < 768) {
+                chunkSize = 1; // Change this value for smaller screens
+            } else if (windowWidth < 1024) {
+                chunkSize = 2; // Change this value for medium screens
+            }
+            const updatedChunks = chunk(projects, chunkSize);
+            setProjectsChunks(updatedChunks);
+        };
 
-    // Initial setup
-    updateProjectsChunks();
+        // Initial setup
+        updateProjectsChunks();
 
-    // Update on window resize
-    window.addEventListener('resize', updateProjectsChunks);
+        // Update on window resize
+        window.addEventListener('resize', updateProjectsChunks);
 
-    return () => {
-      // Cleanup event listener on component unmount
-      window.removeEventListener('resize', updateProjectsChunks);
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
+        return () => {
+            // Cleanup event listener on component unmount
+            window.removeEventListener('resize', updateProjectsChunks);
+        };
+    }, []); // Empty dependency array means this effect runs once on mount
 
-  return (
-    <Swiper
-        navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        }}
-        pagination={{
-            clickable: true,
-        }}
-        modules={[Navigation, Pagination]}
-        className='h-[400px]'
-    >
-        {projectsChunks.map((chunk, index) => (
-            <SwiperSlide key={index}>
-                <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
-                    {chunk.map((slide, slideIndex) => (
-                                      <a key={slideIndex} href={slide.link} target="_blank" rel="noopener noreferrer">
-                                      <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
-                                        <div className="flex flex-col justify-center text-center">
-                                          <div className="flex flex-col text-left">
+    return (
+        <Swiper
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }}
+            pagination={{
+                clickable: true,
+            }}
+            modules={[Navigation, Pagination]}
+            className='h-[400px]'
+        >
+            {projectsChunks.map((chunk, index) => (
+                <SwiperSlide key={index}>
+                    <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
+                        {chunk.map((slide, slideIndex) => (
+                            <a key={`${index}-${slideIndex}`} href={slide.link} target="_blank" rel="noopener noreferrer">
+                                <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
+                                    <div className="flex flex-col justify-center text-center">
+                                        <div className="flex flex-col text-left">
                                             <div className="mb-2 mx-auto">
-                                              {slide.imgUrl}
+                                                {slide.imgUrl}
                                             </div>
                                             <div className="text-lg">
-                                              {slide.description}
+                                                {slide.description}
                                             </div>
                                             <div className="text-2xl flex gap-2 mt-4">
-                                              {slide.withIcons.map((Icon, iconIndex) => (
-                                                <span key={iconIndex} className="mr-2">
-                                                  {Icon}
-                                                </span>
-                                              ))}
+                                                {slide.withIcons.map((Icon, iconIndex) => (
+                                                    <span key={iconIndex} className="mr-2">
+                                                        {Icon}
+                                                    </span>
+                                                ))}
                                             </div>
-                                          </div>
                                         </div>
-                                      </div>
-                                    </a>                      
-                    ))}
-                </div>
-            </SwiperSlide>
-        ))}
-        {/* Navigation Buttons */}
-    </Swiper>
-
-);
+                                    </div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </SwiperSlide>
+            ))}
+            {/* Navigation Buttons */}
+        </Swiper>
+    );
 };
 
 export default Slider;

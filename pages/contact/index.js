@@ -39,7 +39,7 @@ const Contact = () => {
         animate="show" 
         exit="hidden" 
         className="h2 text-center mb-2">
-          Let's <span className=" text-accent">connect</span>
+          Let&apos;s <span className=" text-accent">connect</span>
         </h2>
         <form 
         ref={form} 
