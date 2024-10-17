@@ -21,6 +21,7 @@ import ProjImg11 from '../components/imgJS/ProjImg11.js'
 import ProjImg12 from '../components/imgJS/ProjImg12.js'
 import EchoSphere from '../components/imgJS/EchoSphere.js'
 import ActiveTrack from '../components/imgJS/ActiveTrack.js' 
+import Crypto from '../components/imgJS/Crypto.js' 
 
 import { LuSoup } from "react-icons/lu";
 
@@ -36,7 +37,9 @@ import {
   FaPython,
   FaJava,
   FaArrowRight,
-  FaArrowLeft
+  FaArrowLeft,
+  FaWikipediaW,
+  FaYahoo
 } from "react-icons/fa";
 
 import {
@@ -48,7 +51,8 @@ import {
   SiJupyter,
   SiEclipseide,
   SiHaskell,
-  SiMysql
+  SiMysql,
+  SiTensorflow
 } from "react-icons/si";
 
 const projects = [
@@ -70,6 +74,18 @@ const projects = [
         <FaPython />,
       ],
       link: "https://github.com/haaaarsh4/ActiveTrack"
+    },
+    {
+      title: "Crypto Price Prediction",
+      description: "Crypto Price Prediction : Sentiment Analysis",
+      imgUrl: <Crypto />,
+      withIcons: [
+        <FaPython />,
+        <SiTensorflow />,
+        <FaYahoo />,
+        <FaWikipediaW />
+      ],
+      link: "https://github.com/haaaarsh4/Crypto-Price-Prediction"
     },
     {
       title: "Business Startup",
