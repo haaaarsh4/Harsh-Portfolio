@@ -132,10 +132,10 @@ const About = () => {
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-400">Me</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-white/90 leading-relaxed mb-6 sm:mb-8 break-words">
-              I'm a dedicated computer science student at <span className="text-accent font-semibold">McMaster University</span> with a passion for Full Stack Development and Software Engineering.
+              I&apos;m a dedicated computer science student at <span className="text-accent font-semibold">McMaster University</span> with a passion for Full Stack Development and Software Engineering.
             </p>
             <p className="text-sm sm:text-base md:text-lg xl:text-xl text-white/80 leading-relaxed mb-8 sm:mb-12 break-words">
-              Exploring the intersections of technology and innovation fuels my curiosity and drive. From building scalable web applications to diving deep into machine learning projects, I'm constantly pushing the boundaries of what's possible with code.
+              Exploring the intersections of technology and innovation fuels my curiosity and drive. From building scalable web applications to diving deep into machine learning projects, I&apos;m constantly pushing the boundaries of what&apos;s possible with code.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
