@@ -12,11 +12,18 @@ import TopLeftImg from '../components/TopLeftImg';
 
 const Layout = ({ children }) => {
   return (
-    <div className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
-      <Nav />
+    <div className={`${sora.variable} font-sora`} >
       <Header />
-      <TopLeftImg />
-      {children}
+      
+      <div className="page bg-site text-white bg-cover bg-no-repea">
+        <div className="relative">
+          <Nav />
+          <TopLeftImg />
+          <div className=" xl:mr-[100px]">
+            {children}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

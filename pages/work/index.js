@@ -3,16 +3,22 @@ import Circles from "../../components/Circles";
 
 const Contact = () => {
   return (
-  <div className=" h-full bg-primary/30 py-32 text-center">
-    <Circles />
-    <div className="container mx-auto h-full flex flex-col justify-center mt-5">
-      <h2 className="h2 mb-8 xl:mb-0 text-accent">Projects</h2>
-      <p className="text-white">(Swipe to view more)</p>
-      <div>
-        <Slider />
+    <div className="h-screen w-screen fixed top-0 left-0 bg-transparent overflow-hidden">
+      <Circles />
+      
+      {/* Projects Section - Centered */}
+      <div className="relative z-10 h-full w-full flex items-center justify-center">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:mr-32">
+          <div className="text-center mb-8">
+            <h2 className="h2 text-accent mb-2">Projects</h2>
+            <p className="text-white/70">(Swipe to view more)</p>
+          </div>
+          <div className="flex justify-center">
+            <Slider />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

@@ -2,9 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  background-color: #1a1a2e;
+  overflow: visible;
+}
+
+#__next {
+  overflow: visible;
+}
+
+.bg-site {
+  background-color: #1a1a2e;
+  background-image: url('/path-to-your-background-image.png');
+}
+
 .translate-z-0 {
   transform: translateZ(0px);
 }
+
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
@@ -20,10 +53,10 @@
 
 @layer base {
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    @apply bg-secondary leading-relaxed;
   }
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full;
   }
   .h1 {
     @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;
@@ -48,4 +81,8 @@
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
+}
+
+.container {
+  max-width: 100%;
 }

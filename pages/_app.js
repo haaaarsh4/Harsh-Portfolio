@@ -12,10 +12,10 @@ function MyApp({ Component, pageProps }) {
   return (
   <Layout>
     <AnimatePresence mode='wait'>
-      <motion.div key={router.route} className='h-full'>
-        <Transition />
-        <Component {...pageProps} />
-      </motion.div>
+    <motion.div key={router.route}>
+      <Transition />
+      <Component {...pageProps} />
+    </motion.div>
     </AnimatePresence>
   </Layout>
   );
