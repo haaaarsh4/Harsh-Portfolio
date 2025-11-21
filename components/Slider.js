@@ -8,9 +8,10 @@ import {
   FaPython,
   FaJava,
   FaWikipediaW,
-  FaYahoo
+  FaYahoo, 
 } from "react-icons/fa";
-import { SiMysql, SiTensorflow } from "react-icons/si";
+import { SiMysql, SiTensorflow, SiNextdotjs} from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import { LuSoup } from "react-icons/lu";
 
 // Import your actual image components
@@ -31,6 +32,7 @@ import Crypto from '../components/imgJS/Crypto.js'
 import CIcon from "../components/CIcon";
 import PyGame from "../components/PyGameIcon.js"
 import MLIcon from "../components/MLIcon.js"
+import WorkoutTracker from "../components/imgJS/WorkoutTracker.js"
 
 const projects = [
   {
@@ -48,18 +50,18 @@ const projects = [
     link: "https://github.com/haaaarsh4/ActiveTrack"
   },
   {
+    title: "Workout Tracker",
+    description: "Web app to track workouts and fitness progress!",
+    imgUrl: <WorkoutTracker />,
+    withIcons: [<FaHtml5 />, <FaCss3 />, <SiNextdotjs />],
+    link: "https://workoutt-trackerr.netlify.app/"
+  },
+  {
     title: "Crypto Price Prediction",
     description: "Crypto Price Prediction : Sentiment Analysis",
     imgUrl: <Crypto />,
     withIcons: [<FaPython />, <SiTensorflow />, <FaYahoo />, <FaWikipediaW />],
     link: "https://github.com/haaaarsh4/Crypto-Price-Prediction"
-  },
-  {
-    title: "Business Startup",
-    description: "Design of a prototype for startup webpage",
-    imgUrl: <ProjImg1 />,
-    withIcons: [<FaHtml5 />, <FaCss3 />, <FaReact />],
-    link: "https://64e9245717d1f35164f0df28--cosmic-marshmallow-c772c4.netlify.app/"
   },
   {
     title: "Online MCQ Quiz",
