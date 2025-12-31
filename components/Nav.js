@@ -8,7 +8,7 @@ import {
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'projects', path: '/work', icon: <HiViewColumns /> },
+  { name: 'projects', path: '/projects', icon: <HiViewColumns /> },
   { name: 'contact', path: '/contact', icon: <HiEnvelope /> },
 ];
 
@@ -20,7 +20,7 @@ const Nav = () => {
   const pathname = router.pathname;
   
   return (
-    <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
+    <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-10 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
       <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-6 px-4 md:px-40 xl:px-3 h-[80px] xl:h-max xl:py-6 py-8 bg-gray-900/60 backdrop-blur-lg border border-white/5 xl:rounded-full text-3xl xl:text-xl'>
         {navData.map((link, index) => {
           return (

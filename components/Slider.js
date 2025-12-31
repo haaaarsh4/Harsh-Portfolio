@@ -1,252 +1,363 @@
-import React, { useState, useEffect } from 'react';
-import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaPython,
-  FaJava,
-  FaWikipediaW,
-  FaYahoo, 
+import React, { useState } from 'react';
+import { 
+  FaHtml5, FaCss3, FaJs, FaReact, FaPython, FaJava,
+  FaWikipediaW, FaYahoo, FaGithub, FaExternalLinkAlt, FaGamepad, FaServer, FaMicrophone, FaRobot, FaCheckCircle
 } from "react-icons/fa";
-import { SiMysql, SiTensorflow, SiNextdotjs} from "react-icons/si";
-import { RiNextjsFill } from "react-icons/ri";
+import { SiMysql, SiTensorflow, SiNextdotjs, SiC,
+  SiNetlify,
+  SiIntellijidea,  
+  SiPygame,
+  SiJavascript,
+  SiJira,
+  SiMicrosoftexcel,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
+  SiPostgresql,
+  SiTypescript,
+  SiJsonwebtokens,
+  SiOpenai,
+  SiAuth0
+ } from "react-icons/si";
+
 import { LuSoup } from "react-icons/lu";
 
-// Import your actual image components
-import ProjImg1 from '../components/imgJS/ProjImg1.js'
-import ProjImg2 from '../components/imgJS/ProjImg2.js'
-import ProjImg3 from '../components/imgJS/ProjImg3.js'
-import ProjImg4 from '../components/imgJS/ProjImg4.js'
-import ProjImg5 from '../components/imgJS/ProjImg5.js'
-import ProjImg6 from '../components/imgJS/ProjImg6.js'
-import ProjImg8 from '../components/imgJS/ProjImg8.js'
-import ProjImg9 from '../components/imgJS/ProjImg9.js'
-import ProjImg10 from '../components/imgJS/ProjImg10.js'
-import ProjImg11 from '../components/imgJS/ProjImg11.js'
-import ProjImg12 from '../components/imgJS/ProjImg12.js'
-import EchoSphere from '../components/imgJS/EchoSphere.js'
-import ActiveTrack from '../components/imgJS/ActiveTrack.js' 
-import Crypto from '../components/imgJS/Crypto.js'
-import CIcon from "../components/CIcon";
-import PyGame from "../components/PyGameIcon.js"
-import MLIcon from "../components/MLIcon.js"
-import WorkoutTracker from "../components/imgJS/WorkoutTracker.js"
+import ProjImg2 from '../components/imgJS/ProjImg2.js';
+import ProjImg3 from '../components/imgJS/ProjImg3.js';
+import ProjImg4 from '../components/imgJS/ProjImg4.js';
+import ProjImg6 from '../components/imgJS/ProjImg6.js';
+import ProjImg8 from '../components/imgJS/ProjImg8.js';
+import ProjImg10 from '../components/imgJS/ProjImg10.js';
+import ProjImg11 from '../components/imgJS/ProjImg11.js';
+import ProjImg12 from '../components/imgJS/ProjImg12.js';
+import ProjImg13 from '../components/imgJS/ProjImg13.js';
+import ProjImg14 from '../components/imgJS/ProjImg14.js';
+import ProjImg15 from '../components/imgJS/ProjImg15.js';
+import EchoSphere from '../components/imgJS/EchoSphere.js';
+import ActiveTrack from '../components/imgJS/ActiveTrack.js'; 
+import Crypto from '../components/imgJS/Crypto.js';
+import WorkoutTracker from "../components/imgJS/WorkoutTracker.js";
 
 const projects = [
   {
-    title: "EchoSphere",
-    description: "Virtual Desktop Assistant (voice recognition and automation)",
-    imgUrl: <EchoSphere />,
-    withIcons: [<FaPython />, <LuSoup />],
-    link: "https://github.com/haaaarsh4/EchoSphere-"
-  },
-  {
-    title: "Active Track",
-    description: "Fitness Tracker : Machine Learning",
-    imgUrl: <ActiveTrack />,
-    withIcons: [<FaPython />],
-    link: "https://github.com/haaaarsh4/ActiveTrack"
-  },
-  {
     title: "Workout Tracker",
-    description: "Web app to track workouts and fitness progress!",
+    description: "A production-ready full-stack workout tracking platform built with Next.js App Router and PostgreSQL, featuring authenticated dashboards, structured workout data, and a secure server-side AI assistant integrated via OpenRouter using a custom API route.",
+    category: "Web Development",
     imgUrl: <WorkoutTracker />,
-    withIcons: [<FaHtml5 />, <FaCss3 />, <SiNextdotjs />],
-    link: "https://workoutt-trackerr.netlify.app/"
+    techStack: [
+      { icon: <SiNextdotjs />, name: "Next.js (App Router)" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <FaReact />, name: "Server Components" },
+      { icon: <SiJsonwebtokens />, name: "JWT Authentication" },
+      { icon: <SiAuth0 />, name: "OAuth (NextAuth)" },
+      { icon: <SiOpenai />, name: "OpenRouter AI (Server API)" }
+    ],
+    link: "https://myworkout-tracker.vercel.app/",
+    featured: true
+  },
+  {
+    title: "LinkSnap",
+    description: "A full-stack URL shortening platform with a Python (aiohttp) backend that exposes a REST API for generating short codes and handling fast redirects, paired with a modern frontend and clean frontend–backend separation.",
+    category: "Systems Programming",
+    imgUrl: <ProjImg13 />,
+    techStack: [
+      { icon: <FaPython />, name: "Python" },
+      { icon: <FaReact />, name: "React" },
+      { icon: <FaJs />, name: "JavaScript" }
+    ],
+    link: "https://github.com/haaaarsh4/LinkSnap",
+    featured: true
+  },
+  {
+    title: "ActiveTrack",
+    description: "A machine learning–driven fitness analytics system that processes workout data to identify patterns, predict performance trends, and generate personalized training insights using statistical and ML models.",
+    category: "Machine Learning",
+    imgUrl: <ActiveTrack />,
+    techStack: [
+      { icon: <FaPython />, name: "Python" },
+      { icon: <SiScikitlearn />, name: "Scikit-learn" },
+      { icon: <SiTensorflow />, name: "TensorFlow" },
+      { icon: <SiPandas />, name: "Pandas" },
+      { icon: <SiNumpy />, name: "NumPy" }
+    ],
+    link: "https://github.com/haaaarsh4/ActiveTrack",
+    featured: true
+  }, {
+    title: "JIRA Automation Suite",
+    description: "A web-based automation tool built with Next.js that integrates with the JIRA REST API to fetch, bulk-update, and export issue data into Excel-ready formats, designed as a workflow automation proof-of-concept.",
+    category: "Automation",
+    imgUrl: <ProjImg14 />,
+    techStack: [
+      { icon: <SiNextdotjs />, name: "Next.js" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <SiJira />, name: "JIRA API Integration" },
+      { icon: <FaServer />, name: "REST API" },
+      { icon: <SiMicrosoftexcel />, name: "Excel" }
+    ],
+    link: "https://jira-automation-tool.vercel.app/"
+  },
+  {
+    title: "EchoSphere",
+    description: "A Python-based virtual desktop assistant that uses speech recognition and natural language processing to execute voice commands, automate system tasks, and perform contextual web queries through a modular command architecture.",
+    category: "Automation",
+    imgUrl: <EchoSphere />,
+    techStack: [
+      { icon: <FaPython />, name: "Python" },
+      { icon: <FaMicrophone />, name: "Speech Recognition" },
+      { icon: <FaRobot />, name: "NLP & Command Parsing" },
+      { icon: <LuSoup />, name: "BeautifulSoup (Web Scraping)" }
+    ],
+    link: "https://github.com/haaaarsh4/EchoSphere-",
+    featured: true
+  },
+  {
+    title: "HCN Generator",
+    description: "A lightweight web-based QA utility that generates valid Health Card Numbers using the Luhn algorithm, enabling testers to validate healthcare systems with compliant synthetic data instead of real patient information.",
+    category: "Web Development",
+    imgUrl: <ProjImg15 />,
+    techStack: [
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3 />, name: "CSS3" },
+      { icon: <FaCheckCircle />, name: "Luhn Algorithm" }
+    ],
+    link: "https://hcngen.vercel.app/"
   },
   {
     title: "Crypto Price Prediction",
-    description: "Crypto Price Prediction : Sentiment Analysis",
+    description: "Advanced cryptocurrency price prediction system using sentiment analysis and deep learning with TensorFlow for accurate market forecasting.",
+    category: "Machine Learning",
     imgUrl: <Crypto />,
-    withIcons: [<FaPython />, <SiTensorflow />, <FaYahoo />, <FaWikipediaW />],
+    techStack: [
+      { icon: <FaPython />, name: "Python" },
+      { icon: <SiTensorflow />, name: "TensorFlow" },
+      { icon: <FaYahoo />, name: "Yahoo Finance" },
+      { icon: <FaWikipediaW />, name: "Wikipedia" }
+    ],
     link: "https://github.com/haaaarsh4/Crypto-Price-Prediction"
   },
   {
     title: "Online MCQ Quiz",
-    description: "Design & Development of an online MCQ quiz",
+    description: "A responsive web-based multiple-choice quiz platform where users can answer questions in real-time, track scores instantly, and receive immediate feedback. Built for seamless interaction with smooth question transitions and score tracking.",
+    category: "Web Development",
     imgUrl: <ProjImg3 />,
-    withIcons: [<FaHtml5 />, <FaCss3 />, <FaJs />],
+    techStack: [
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3 />, name: "CSS3" },
+      { icon: <FaJs />, name: "JavaScript" },
+      { icon: <SiNetlify />, name: "Netlify" }
+    ],
     link: "https://comfy-quokka-1f1d18.netlify.app/"
   },
   {
     title: "Decision Dice",
-    description: "Design & Development of a Random Choice Generator",
+    description: "A fun and interactive web app that randomly selects an option from a user-provided list. Features smooth animations, instant results, and an intuitive interface for effortless decision-making.",
+    category: "Web Development",
     imgUrl: <ProjImg4 />,
-    withIcons: [<FaHtml5 />, <FaCss3 />, <FaJs />],
+    techStack: [
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3 />, name: "CSS3" },
+      { icon: <FaJs />, name: "JavaScript" },
+      { icon: <SiNetlify />, name: "Netlify" }
+    ],
     link: "https://64e90fb613ef6f4406f4b96f--melodic-toffee-c21015.netlify.app/"
   },
   {
-    title: "Online RPG game",
-    description: "Design & Development of an Online RPG game",
+    title: "Online RPG Game",
+    description: "A browser-based text RPG called 'Dragon Repeller' where players explore locations, battle monsters, manage inventory, and progress through quests. Includes character stats, turn-based combat, and immersive storytelling.",
+    category: "Web Development",
     imgUrl: <ProjImg2 />,
-    withIcons: [<FaHtml5 />, <FaCss3 />, <FaJs />],
+    techStack: [
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3 />, name: "CSS3" },
+      { icon: <FaJs />, name: "JavaScript" }
+    ],
     link: "https://inspiring-cranachan-27b2ba.netlify.app/"
   },
   {
     title: "Text Editor",
-    description: "Design & Development of a working Text Editor",
+    description: "A full-featured desktop text editor built in Java with syntax highlighting, file management, and a clean graphical interface. Supports multiple file editing and smooth user interactions.",
+    category: "Desktop Applications",
     imgUrl: <ProjImg11 />,
-    withIcons: [<FaJava />],
+    techStack: [
+      { icon: <FaJava />, name: "Java" },
+      { icon: <SiIntellijidea />, name: "IntelliJ IDEA" }
+    ],
     link: "https://github.com/haaaarsh4/Text-Editor"
   },
   {
     title: "Snake Game",
-    description: "Snake Game Design and Development",
+    description: "A modernized version of the classic Snake game built in Java. Features smooth animations, responsive controls, and object-oriented design for maintainable gameplay logic.",
+    category: "Desktop Applications",
     imgUrl: <ProjImg10 />,
-    withIcons: [<FaJava />],
+    techStack: [
+      { icon: <FaJava />, name: "Java" }
+    ],
     link: "https://github.com/haaaarsh4/Snake-Game"
   },
   {
     title: "Space Shooter Game",
-    description: "Sample Design of a Space Shooter game",
+    description: "A multiplayer space shooter built with Python and Pygame. Includes dynamic gameplay, collectible power-ups, and competitive scoring mechanics for an engaging action experience.",
+    category: "Desktop Applications",
     imgUrl: <ProjImg6 />,
-    withIcons: [<FaPython />, <PyGame />],
+    techStack: [
+      { icon: <FaPython />, name: "Python" },
+      { icon: <FaGamepad />, name: "Pygame" }
+    ],
     link: "https://github.com/haaaarsh4/Space-shooter-Multiplayer"
-  },
-  {
-    title: "Library Management System",
-    description: "Design & Development of a Library Management System",
-    imgUrl: <ProjImg12 />,
-    withIcons: [<FaPython />, <SiMysql />],
-    link: "https://github.com/haaaarsh4/Library-Management-System"
-  },
-  {
-    title: "CLI Chess",
-    description: "Sample Design of CLI Chess game",
-    imgUrl: <ProjImg8 />,
-    withIcons: [<CIcon />],
-    link: "https://github.com/haaaarsh4/CHESS-CLI/tree/main"
   }
 ];
 
-const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerSlide, setItemsPerSlide] = useState(3);
-
-  useEffect(() => {
-    const updateItemsPerSlide = () => {
-      const windowWidth = window.innerWidth;
-      if (windowWidth < 768) {
-        setItemsPerSlide(1);
-      } else if (windowWidth < 1024) {
-        setItemsPerSlide(2);
-      } else {
-        setItemsPerSlide(3);
-      }
-    };
-
-    updateItemsPerSlide();
-    window.addEventListener('resize', updateItemsPerSlide);
-    return () => window.removeEventListener('resize', updateItemsPerSlide);
-  }, []);
-
-  const totalSlides = Math.ceil(projects.length / itemsPerSlide);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  const currentProjects = projects.slice(
-    currentIndex * itemsPerSlide,
-    (currentIndex + 1) * itemsPerSlide
-  );
+const ProjectCard = ({ project, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      {/* Container with relative positioning for nav buttons */}
-      <div className="relative px-16 sm:px-20">
-        
-        {/* Navigation Buttons */}
-        {totalSlides > 1 && (
-          <>
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-red-500/90 hover:bg-red-600 text-white p-3 sm:p-4 rounded-full disabled:opacity-30 disabled:cursor-not-allowed z-40 transition-all"
-              disabled={currentIndex === 0}
-              aria-label="Previous slide"
-            >
-              <BsArrowLeft className="text-xl sm:text-2xl" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-red-500/90 hover:bg-red-600 text-white p-3 sm:p-4 rounded-full disabled:opacity-30 disabled:cursor-not-allowed z-40 transition-all"
-              disabled={currentIndex === totalSlides - 1}
-              aria-label="Next slide"
-            >
-              <BsArrowRight className="text-xl sm:text-2xl" />
-            </button>
-          </>
-        )}
+    <div
+      className="group relative bg-gradient-to-br from-slate-900/90 to-slate-800/80 rounded-xl overflow-hidden border border-slate-700/50 hover:border-red-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10 hover:-translate-y-1"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+      }}
+    >
+      <div className="flex flex-col items-start gap-3 sm:gap-4 p-4 sm:p-6">
+        <div className="w-full sm:hidden">
+          <div className="relative w-full h-40 bg-slate-950 rounded-lg overflow-hidden border border-slate-700/50 group-hover:border-red-500/50 transition-colors duration-500 shadow-lg">
+            <div className={`w-full h-full transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}>
+              {project.imgUrl}
+            </div>
+          </div>
+        </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentProjects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full"
-            >
-              <div className="bg-slate-800/60 rounded-xl overflow-hidden border border-slate-700/50 hover:border-red-500/70 transition-colors duration-200 h-full flex flex-col">
-                {/* Image Container */}
-                <div className="bg-slate-900/50 w-full aspect-video flex items-center justify-center overflow-hidden">
-                  {project.imgUrl}
-                </div>
-
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2 line-clamp-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 flex-1 line-clamp-2">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack Icons */}
-                  <div className="flex items-center justify-between mt-auto">
-                    <div className="flex gap-2">
-                      {project.withIcons.map((Icon, iconIndex) => (
-                        <span
-                          key={iconIndex}
-                          className="text-xl text-gray-400"
-                        >
-                          {Icon}
-                        </span>
-                      ))}
-                    </div>
-                    <BsArrowRight className="text-red-500 text-lg flex-shrink-0" />
-                  </div>
-                </div>
+        <div className="flex flex-row items-start gap-4 sm:gap-5 w-full">
+          <div className="hidden sm:block relative flex-shrink-0">
+            <div className="relative w-48 h-32 lg:w-56 lg:h-36 bg-slate-950 rounded-lg overflow-hidden border border-slate-700/50 group-hover:border-red-500/50 transition-colors duration-500 shadow-lg">
+              <div className={`w-full h-full transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}>
+                {project.imgUrl}
               </div>
-            </a>
-          ))}
+            </div>
+          </div>
+
+          <div className="flex-1 flex flex-col gap-2 sm:gap-3 min-w-0">
+            <div className="flex items-start justify-between gap-2 flex-wrap">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                  <span className="text-[9px] sm:text-[10px] font-bold text-red-400 uppercase tracking-wider bg-red-500/10 px-2 py-0.5 sm:py-1 rounded-full border border-red-500/30">
+                    {project.category}
+                  </span>
+                </div>
+
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-red-400 transition-colors duration-300 break-words">
+                  {project.title}
+                </h3>
+
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed break-words">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                {project.techStack.map((tech, i) => (
+                  <div key={i} className="flex items-center gap-1 sm:gap-1.5 bg-slate-800/40 rounded-md px-2 sm:px-3 py-1 sm:py-1.5 border border-slate-700/30 hover:border-red-500/30 transition-colors">
+                    <span className="text-base sm:text-lg text-red-400 flex-shrink-0">
+                      {tech.icon}
+                    </span>
+                    <span className="text-white font-medium text-[10px] sm:text-xs whitespace-nowrap">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30 text-xs sm:text-sm w-full sm:w-auto flex-shrink-0"
+              >
+                {project.link.includes('github') ? (
+                  <>
+                    <FaGithub className="text-sm sm:text-base" />
+                    <span>View Code</span>
+                  </>
+                ) : (
+                  <>
+                    <FaExternalLinkAlt className="text-xs sm:text-sm" />
+                    <span>Live Demo</span>
+                  </>
+                )}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  );
+};
 
-      {/* Pagination Dots */}
-      {totalSlides > 1 && (
-        <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all duration-200 ${
-                index === currentIndex
-                  ? 'w-8 bg-red-500'
-                  : 'w-2 bg-gray-600 hover:bg-gray-500'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+const Slider = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  
+  const categories = ['All', 'Systems Programming', 'Automation', 'Machine Learning', 'Web Development', 'Desktop Applications'];
+  
+  const filteredProjects = projects.filter(project => {
+    return selectedCategory === 'All' || project.category === selectedCategory;
+  });
+
+  return (
+    <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 pb-24 xl:pb-10">
+      <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3 h-[140px] sm:h-[180px] flex flex-col justify-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold px-4">
+          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-400">Projects</span>
+        </h2>
+        <p className="text-white/70 text-sm sm:text-base lg:text-lg px-4 max-w-3xl mx-auto">
+          A collection of projects showcasing my skills in web development, machine learning, and software engineering
+        </p>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-10 px-2 min-h-[60px] sm:min-h-[50px] items-center">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
+              selectedCategory === category
+                ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
+                : 'bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-white border border-slate-700'
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div className="space-y-4 sm:space-y-6 min-h-[500px]">
+        {filteredProjects.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
+      </div>
+
+      {filteredProjects.length === 0 && (
+        <div className="text-center py-12 sm:py-20">
+          <div className="text-4xl sm:text-6xl mb-4">🔍</div>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">No projects found</h3>
+          <p className="text-slate-400 text-sm sm:text-base">Try selecting a different category</p>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 };

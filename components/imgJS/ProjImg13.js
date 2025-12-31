@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Circles = () => {
     return (
-        <Image src={'/spaceship_red.png'} width={260} height={200} className="scale-75 w-full h-full"/>
+        <Image src={'/project-img29.png'} width={260} height={200} className="w-full h-full"/>
     );
   };
   

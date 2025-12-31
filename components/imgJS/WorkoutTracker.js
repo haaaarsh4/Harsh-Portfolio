@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const WorkoutTracker = () => {
     return (
-        <Image src={'/WORKOUT-TRACKER.png'} width={260} height={200} className="w-full h-full"/>
+        <Image src={'/project-img28.png'} width={260} height={200} className=" w-full h-full"/>
     );
   };
   
