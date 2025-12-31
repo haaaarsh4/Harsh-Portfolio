@@ -4,6 +4,9 @@ import {
   FaWikipediaW, FaYahoo, FaGithub, FaExternalLinkAlt, FaGamepad, FaServer, FaMicrophone, FaRobot, FaCheckCircle
 } from "react-icons/fa";
 import { SiMysql, SiTensorflow, SiNextdotjs, SiC,
+  SiSqlite,
+  SiRedis,
+  SiTailwindcss,
   SiNetlify,
   SiIntellijidea,  
   SiPygame,
@@ -33,6 +36,7 @@ import ProjImg12 from '../components/imgJS/ProjImg12.js';
 import ProjImg13 from '../components/imgJS/ProjImg13.js';
 import ProjImg14 from '../components/imgJS/ProjImg14.js';
 import ProjImg15 from '../components/imgJS/ProjImg15.js';
+import ProjImg16 from '../components/imgJS/ProjImg16.js';
 import EchoSphere from '../components/imgJS/EchoSphere.js';
 import ActiveTrack from '../components/imgJS/ActiveTrack.js'; 
 import Crypto from '../components/imgJS/Crypto.js';
@@ -57,14 +61,32 @@ const projects = [
     featured: true
   },
   {
+    title: "HTTP Server (C++)",
+    description: "A high-performance HTTP server implemented in C++ that demonstrates low-level networking, concurrency, and scalable request handling. Includes both a multithreaded thread-pool server and an epoll-based event-driven server with benchmarks comparing throughput and latency.",
+    category: "Systems Programming",
+    imgUrl: <ProjImg16 />, // (replace with correct image import if needed)
+    techStack: [
+      { icon: <SiC />, name: "C++" },
+      { icon: <FaServer />, name: "HTTP Server" },
+      { icon: <SiC />, name: "Sockets & Epoll" },
+      { icon: <FaRobot />, name: "Concurrency / Thread Pool" },
+      { icon: <FaCheckCircle />, name: "Benchmarking" }
+    ],
+    link: "https://github.com/upadhyay1302/http_server"
+  },
+  {
     title: "LinkSnap",
-    description: "A full-stack URL shortening platform with a Python (aiohttp) backend that exposes a REST API for generating short codes and handling fast redirects, paired with a modern frontend and clean frontend–backend separation.",
+    description: "A high-performance URL shortening system built with Python (aiohttp) that generates short codes and serves fast redirects via a REST API. Uses SQLite with uniqueness constraints to ensure identical long URLs map to a single short link, with application-level caching, rate limiting, and input validation for reliability. Includes a lightweight Next.js frontend for link creation and QR code generation.",
     category: "Systems Programming",
     imgUrl: <ProjImg13 />,
     techStack: [
-      { icon: <FaPython />, name: "Python" },
-      { icon: <FaReact />, name: "React" },
-      { icon: <FaJs />, name: "JavaScript" }
+      { icon: <FaPython />, name: "Python (aiohttp)" },
+      { icon: <FaServer />, name: "RESTful API" },
+      { icon: <SiSqlite />, name: "SQLite" },
+      { icon: <SiRedis />, name: "Caching Layer" },
+      { icon: <SiNextdotjs />, name: "Next.js Frontend" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS" }
     ],
     link: "https://github.com/haaaarsh4/LinkSnap",
     featured: true
