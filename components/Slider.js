@@ -72,7 +72,7 @@ const projects = [
       { icon: <FaRobot />, name: "Concurrency / Thread Pool" },
       { icon: <FaCheckCircle />, name: "Benchmarking" }
     ],
-    link: "https://github.com/upadhyay1302/http_server"
+    link: "https://github.com/haaaarsh4/http_server"
   },
   {
     title: "LinkSnap",
