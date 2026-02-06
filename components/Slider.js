@@ -331,10 +331,10 @@ const Slider = () => {
     <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 pb-24 xl:pb-10">
       <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3 h-[140px] sm:h-[180px] flex flex-col justify-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold px-4">
-          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-400">Projects</span>
+          Personal <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-400">Projects</span>
         </h2>
         <p className="text-white/70 text-sm sm:text-base lg:text-lg px-4 max-w-3xl mx-auto">
-          A collection of projects showcasing my skills in web development, machine learning, and software engineering
+          Take a look at some personal projects I’ve been working on :)
         </p>
       </div>
 
