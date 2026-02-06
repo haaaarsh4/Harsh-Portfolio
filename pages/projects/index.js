@@ -1,7 +1,3 @@
-// ============================================
-// PROJECTS.JS - COMPLETE FILE WITH PROPER ANIMATION
-// ============================================
-
 import Slider from "../../components/Slider";
 import Circles from "../../components/Circles";
 import { motion } from 'framer-motion';
